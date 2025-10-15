@@ -1,13 +1,23 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
+import random
 import time
 
-st.title("📈 Live Updating Data Chart")
+st.title("🎭 Mood Randomizer App")
 
-chart = st.line_chart([])
+moods = {
+    "Happy": "😄 You’re radiating sunshine today!",
+    "Tired": "😴 You deserve a nap (or 3).",
+    "Focused": "🎯 Nothing can stop you right now.",
+    "Stressed": "💥 Take a deep breath — you’ve got this.",
+    "Curious": "🧠 Curiosity creates genius.",
+    "Chill": "🧊 You’re in your calm era.",
+    "Powerful": "🔥 No one’s competing with you — it’s your day."
+}
 
-for i in range(100):
-    new_data = pd.DataFrame(np.random.randn(1, 3), columns=['A', 'B', 'C'])
-    chart.add_rows(new_data)
-    time.sleep(0.2)
+if st.button("🔮 Reveal My Mood"):
+    with st.spinner("Analyzing your aura..."):
+        time.sleep(1.5)
+    mood, message = random.choice(list(moods.items()))
+    st.subheader(f"{mood} {message}")
+
+st.caption("✨ Click again to see wha
