@@ -20,4 +20,4 @@ if st.button("🔮 Reveal My Mood"):
     mood, message = random.choice(list(moods.items()))
     st.subheader(f"{mood} {message}")
 
-st.caption("✨ Click again to see wha
+st.caption("✨ Click again to see what your vibe is this time!")
